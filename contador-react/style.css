@@ -1,0 +1,159 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.contador {
+    margin-bottom: 20px;
+}
+
+/* Estilos do corpo */
+body {
+    background: radial-gradient(circle, #6ffcc6, #28e0a6);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Estilos da seção do contador */
+.contador-section {
+    background: rgba(28, 172, 141, 0.597);
+    padding: 5%;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%; /* Largura responsiva */
+    max-width: 600px; /* Largura máxima */
+}
+
+/* Estilos do contador */
+.contador {
+    background-color: hsla(144, 91%, 83%, 0.3);
+    border: dashed 5px #f1a7cc;
+    box-shadow: 5px 5px 25px rgba(8, 182, 171, 0.548);
+    border-radius: 10px;
+    padding: 5%;
+    font-size: 3rem; /* Tamanho responsivo */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sombra de texto para o título */
+h1 {
+    font-style: oblique;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sombra de texto para o contador */
+.contador-valor {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+/* Estilos dos botões */
+button {
+    position: relative;
+    overflow: hidden;
+    border: 2px dashed #f1a7cc;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #f080b8, #dc0a84);
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 5px 5px 25px rgba(250, 91, 181, 0.3);
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+button:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: #dc0a84;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus {
+    outline: none;
+    animation: pulse 0.4s;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(250, 91, 181, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(250, 91, 181, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(250, 91, 181, 0);
+    }
+}
+
+/* Estilos da imagem */
+.imagem {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da seção */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Adiciona borda arredondada à imagem */
+}
+
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    .contador {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+}
+
+h2 {
+    text-align: center;
+}
