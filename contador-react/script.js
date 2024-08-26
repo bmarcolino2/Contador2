@@ -17,6 +17,7 @@ function criarNovoContador() {
     const botaoApagar = document.createElement("button");
     botaoApagar.textContent = "Apagar";
 
+
     // Adiciona os elementos ao container do contador
     contadorContainer.appendChild(contadorDisplay);
     contadorContainer.appendChild(botaoAumentar);
